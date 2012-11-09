@@ -1,0 +1,14 @@
+
+# add for SEF Module (by customweb GmbH)
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # if you use a 1&1 Webhosting set the RewriteBase
+  #RewriteBase /
+  # Rewrite current-style URLs of the form 'index.php?q=x'.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule ^(.*)$ index.php?q=$1&%{QUERY_STRING} [L]
+</IfModule>
+# end add for SEF Module (by customweb GmbH)
+
